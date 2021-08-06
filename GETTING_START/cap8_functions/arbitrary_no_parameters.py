@@ -1,10 +1,10 @@
 ## THE (*) TELLS PYTHON TO MAKE AN EMPTY TUPLE AND PACK WHATEVER VALUES IT RECEIVES INTO THIS TUPLE
-def make_pizza(*toppings):
+def make_pizza_first(*toppings):
     """Print the list of toppings that have been requested."""
     print(toppings)
 
-make_pizza('pepperoni')
-make_pizza('mushrooms', 'green peppers', 'extra cheese')
+##make_pizza_first('pepperoni')
+##make_pizza_first('mushrooms', 'green peppers', 'extra cheese')
 
 ##MIXING POSITIONAL AND ARBITRARY ARGUMENTS
 #arbitrary arguments always in the last!
@@ -16,8 +16,8 @@ def make_pizza(size, *toppings):
     for topping in toppings:
         print("- " + topping)
 
-make_pizza(16, 'pepperoni')
-make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+##make_pizza(16, 'pepperoni')
+##make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
 #USING ARBITRARY KEYWORD ARGUMENTS
 def build_profile(first, last, **user_info):
@@ -29,8 +29,8 @@ def build_profile(first, last, **user_info):
         profile[key] = value
     return profile
 
-user_profile = build_profile('albert', 'einstein',
-                            location='princeton',
-                            field='physics')
+#user_profile = build_profile('albert', 'einstein',
+#                            location='princeton',
+#                            field='physics')
 
-print(user_profile)
+#print(user_profile)
