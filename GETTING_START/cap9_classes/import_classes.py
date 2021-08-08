@@ -21,3 +21,17 @@ my_beetle = Car('volkswagen', 'beetle', 2016)
 print(my_beetle.get_descriptive_name())
 my_tesla = ElectricCar('tesla', 'roadster', 2016)
 print(my_tesla.get_descriptive_name())
+
+#importing an entire module
+import car
+
+#the car turns a superclass of all the subclasses that are inside the module
+my_beetle = car.Car('volkswagen', 'beetle', 2016)
+print(my_beetle.get_descriptive_name())
+my_tesla = car.ElectricCar('tesla', 'roadster', 2016)
+print(my_tesla.get_descriptive_name())
+
+##importing all classes from a module
+from car import *
+
+##It is possible to import a module to be used in another one.
