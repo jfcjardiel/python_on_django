@@ -46,6 +46,12 @@ class ElectricCar(Car):
     def describe_battery(self):
         """Print a statement describing the battery size."""
         print("This car has a " + str(self.battery_size) + "-kWh battery.")
+    
+    ##if you need to override method from the parent class, just define the method with the exact name
+    ## inside the subclass
+    def fill_gas_tank():
+        """Electric cars don't have gas tanks."""
+        print("This car doesn't need a gas tank!")
 
 
 my_tesla = ElectricCar('tesla', 'model s', 2016)
