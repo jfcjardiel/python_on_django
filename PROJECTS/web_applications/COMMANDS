@@ -1,0 +1,20 @@
+<------------ CREATING VIRTUAL ENVIRONMENT ---------------->
+python -m venv ll_env
+ or you can use 
+py -m venv 11_env
+
+that commmand, running the venv mode, create a virtual environment named 11_env
+
+<------------ ACTIVATING THE VIRTUAL ENVIRONMENT ---------------->
+linux:
+source ll_env/bin/activate
+
+windows:
+ll_env\Scripts\activate
+
+and to deactivate just write: deactivate
+
+note: everytime it is important to:
+BEFORE: Set-ExecutionPolicy RemoteSigned
+AFTER: Set-ExecutionPolicy Restricted
+This command runs the script activate in ll_env/bin. 
