@@ -18,3 +18,15 @@ note: everytime it is important to:
 BEFORE: Set-ExecutionPolicy RemoteSigned
 AFTER: Set-ExecutionPolicy Restricted
 This command runs the script activate in ll_env/bin. 
+
+<------------ INSTALLING DJANGO ---------------->
+pip install Django
+Keep in mind that Django will be available only when the environment
+is active.
+
+
+<------------ CREATING A PROJECT IN DJANGO ---------------->
+linux:
+django-admin.py startproject learning_log .
+windows:
+django-admin.exe startproject learning_log .
