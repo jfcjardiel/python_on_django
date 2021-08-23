@@ -30,3 +30,9 @@ linux:
 django-admin.py startproject learning_log .
 windows:
 django-admin.exe startproject learning_log .
+
+<------------ STARTING AN APP ---------------->
+python manage.py startapp learning_logs
+
+The command startapp appname tells Django to create the infrastructure
+needed to build an app.
