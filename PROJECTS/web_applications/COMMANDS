@@ -36,3 +36,32 @@ python manage.py startapp learning_logs
 
 The command startapp appname tells Django to create the infrastructure
 needed to build an app.
+
+<------------ RUN THE PROJECT ---------------->
+python manage.py runserver
+
+
+<------------ MODIFY DATABASE ---------------->
+Whenever we want to modify the data that Learning Log manages,
+we’ll follow these three steps: modify models.py, call makemigrations on
+learning_logs, and tell Django to migrate the project.
+
+python manage.py makemigrations learning_logs
+
+python manage.py migrate
+
+The command makemigrations tells Django to figure out how to modify
+the database so it can store the data associated with any new models we’ve
+defined. 
+
+<------------ CREATE SUPERUSER ----------------> 
+python manage.py createsuperuser
+
+<------------ DJANGO SHELL ----------------> 
+python manage.py shell
+from learning_logs.models import Topic
+topics = Topic.objects.all()
+for topic in topics:
+    print(topic.id, topic)
+t = Topic.objects.get(id=1)
+
