@@ -1,3 +1,7 @@
+<------------ DJANGO SHELL ---------------->
+to see if everything is OK
+python manage.py check
+
 <------------ CREATING VIRTUAL ENVIRONMENT ---------------->
 python -m venv ll_env
  or you can use 
@@ -58,6 +62,8 @@ defined.
 python manage.py createsuperuser
 
 <------------ DJANGO SHELL ----------------> 
+with this, we can use the environment of django to play with the data!
+
 python manage.py shell
 from learning_logs.models import Topic
 topics = Topic.objects.all()

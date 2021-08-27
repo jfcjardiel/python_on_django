@@ -1,0 +1,9 @@
+{% if latest_topic_list %}
+    <ul>
+    {% for question in latest_topic_list %}
+        <li><a href="/learning_logs/{{ question.id }}/">{{ question.text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
