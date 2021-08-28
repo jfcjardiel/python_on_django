@@ -1,7 +1,7 @@
 {% if latest_topic_list %}
     <ul>
     {% for question in latest_topic_list %}
-        <li><a href="/learning_logs/{{ question.id }}/">{{ question.text }}</a></li>
+        <li><a href="{% url 'learning_logs:detail' question.id %}">{{ question.text }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
