@@ -1,6 +1,14 @@
-<h1>{{ question.text }}</h1>
-<ul>
-    {% for entries in entry %}
-        <li>{{ entries.text }}</li>
-    {% endfor %}
-</ul>
+<form action="{% url 'learning_logs:vote' question.id %}" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>{{ question.text }}</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <ul>
+        {% for entries in entry %}
+            <li>{{ entries.text }}</li>
+        {% endfor %}
+    </ul>
+        <input type="text" name="next_entry" id="next_entry{{ forloop.counter }}" value="{{ entries.id }}">
+</fieldset>
+<input type="submit" value="Vote">
+</form>

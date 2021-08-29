@@ -35,6 +35,8 @@ def detail(request, question_id):
 #   return HttpResponse("You're looking at question %s." % question_id)
 
 def results(request, question_id):
+    question = get_object_or_404(Topic, id=question_id)
+    entry = get_list_or_404(Entry, topic=question_id)
     response = "You're looking at the results of question %s."
     return HttpResponse(response % question_id)
 
