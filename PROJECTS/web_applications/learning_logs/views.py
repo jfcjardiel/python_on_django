@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import loader
+from django.urls import reverse
 
 from .models import Topic, Entry
 
@@ -41,4 +42,10 @@ def results(request, question_id):
     return HttpResponse(response % question_id)
 
 def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
+    try:
+        new_entry = Entry.objects.create(topic_id=question_id, text=request.POST['next_entry'])
+    except (KeyError, Topic.DoesNotExist):
+        question = get_object_or_404(Topic, id=question_id)
+        entry = get_list_or_404(Entry, topic=question_id)
+        return render(request, 'learning_logs/details.html', {'question': question, 'entry': entry})    
+    return HttpResponseRedirect(reverse('learning_logs:detail', args=(question_id,)))
