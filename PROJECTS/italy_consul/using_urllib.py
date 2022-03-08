@@ -38,30 +38,3 @@ driver.get("https://prenotami.esteri.it/Services/Booking/751")
 
 tentativa = 0
 i=0
-while(True):
-    print(tentativa, 'tentativa')
-    #sending file the pdf
-    file_location = os.path.join('C:\\Users\\jfcjardiel', 'Downloads', 'Fatura_Claro_unlocked.pdf')
-    choose_file = driver.find_elements(By.ID, "File_0")
-    choose_file[0].send_keys(file_location)
-
-    #checking the privacy check
-    privacy_check = driver.find_elements(By.ID, "PrivacyCheck")
-    privacy_check[0].click()
-
-    try:
-        #submit form
-        submit = driver.find_elements(By.ID, "btnAvanti")
-        submit[0].click()
-        time.sleep(60)
-        test = driver.find_elements(By.ID, "ServizioDescrizione")
-        if test:
-        while(i<50):
-                winsound.Beep(400,500)
-                i = i+1
-        break
-    except:
-        driver.get("https://prenotami.esteri.it/Services/Booking/751")
-        print('tentando novamente')
-        time.sleep(1)
-    tentativa = tentativa + 1
